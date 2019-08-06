@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  World Tracking
+//  Tutorial02_WorldTracking
 //
-//  Created by Jing Yang on 7/26/19.
+//  Created by qingguo xu on 8/6/19.
 //  Copyright © 2019 Jing Yang. All rights reserved.
 //
 
