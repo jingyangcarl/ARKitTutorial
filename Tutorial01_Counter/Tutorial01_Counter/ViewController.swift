@@ -15,14 +15,14 @@ class ViewController: UIViewController {
     
     @IBAction func perform(_ sender: Any) {
         
-        // the following code is the if-else statement in swift
+//        // the following code is the if-else statement in swift
 //        if let number = self.label.text {
 //            print(number)
 //        } else {
 //            print("value is null")
 //        }
         
-        // the following code the same as if else statement
+//        // the following code the same as if else statement
 //         guard let number = self.label.text else {return}
 //         print(number)
         
