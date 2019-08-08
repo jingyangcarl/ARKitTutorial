@@ -1,0 +1,6 @@
+framework module Pods_Tutorial05_WhackAJellyfish {
+  umbrella header "Pods-Tutorial05_WhackAJellyfish-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -6,5 +6,6 @@ target 'Tutorial05_WhackAJellyfish' do
   use_frameworks!
 
   # Pods for Tutorial05_WhackAJellyfish
-
+  # https://github.com/dalu93/Each
+  pod 'Each', '~> 1.2'
 end

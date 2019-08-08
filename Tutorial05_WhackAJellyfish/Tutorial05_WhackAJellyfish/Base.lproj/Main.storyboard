@@ -43,22 +43,37 @@
                                     <action selector="ButtonReset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vJo-Om-GCl"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6M-Rr-NnF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="80"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.050000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="AEW-Vb-RIc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="QTP-fV-yhl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1vo-oj-qrX"/>
                             <constraint firstItem="QTP-fV-yhl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4uD-RD-thO"/>
+                            <constraint firstItem="r6M-Rr-NnF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6c5-he-ZtU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cHo-lN-iI2" secondAttribute="trailing" constant="20" id="7cZ-hN-bDJ"/>
+                            <constraint firstItem="r6M-Rr-NnF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aiF-JY-DiC"/>
                             <constraint firstAttribute="bottom" secondItem="QTP-fV-yhl" secondAttribute="bottom" id="bjQ-mY-VhC"/>
                             <constraint firstItem="QTP-fV-yhl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="c4k-xf-qzb"/>
+                            <constraint firstItem="r6M-Rr-NnF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cVY-BV-1t5"/>
                             <constraint firstItem="cHo-lN-iI2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="f7c-4j-t6h"/>
                             <constraint firstItem="U8w-rx-nU9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jD5-bs-gsU"/>
                             <constraint firstItem="U8w-rx-nU9" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xDr-gu-BKd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r6M-Rr-NnF" secondAttribute="trailing" id="zJz-FY-AgJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="buttonPlay" destination="U8w-rx-nU9" id="0gK-go-MLT"/>
+                        <outlet property="labelTimer" destination="r6M-Rr-NnF" id="nim-oT-ZGB"/>
                         <outlet property="sceneView" destination="QTP-fV-yhl" id="ZH1-A0-hU4"/>
                     </connections>
                 </viewController>

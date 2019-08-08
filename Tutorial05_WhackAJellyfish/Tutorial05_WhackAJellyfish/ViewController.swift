@@ -8,9 +8,13 @@
 
 import UIKit
 import ARKit
+import Each
 
 class ViewController: UIViewController {
 
+    var timer = Each(1).seconds
+    var countdown = 10
+    @IBOutlet weak var labelTimer: UILabel!
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var buttonPlay: UIButton!
     let configuration = ARWorldTrackingConfiguration()
@@ -25,25 +29,58 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    /*
+     Description:
+        This function is used to process button play
+     Input:
+        @ Any _ sender: any sender
+    */
     @IBAction func ButtonPlay(_ sender: Any) {
+        self.SetTimer()
         self.addNode()
         self.buttonPlay.isEnabled = false
     }
     
+    /*
+     Description:
+        This function is used to process button reset
+     Input:
+        @ Any _ sender: any sender
+     */
     @IBAction func ButtonReset(_ sender: Any) {
-        
+        self.timer.stop()
+        self.RestoreTiemr()
+        self.labelTimer.text = "Let's Play"
+        self.buttonPlay.isEnabled = true
+        self.sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
+            node.removeFromParentNode()
+        }
     }
     
+    /*
+     Description:
+        This function is used to add a node to the sceneView
+     Input:
+        @ void parameter: void
+     Output:
+        @ void returnValue: void
+    */
     func addNode(){
         let jellyfishScene = SCNScene(named: "art.scnassets/Jellyfish.scn")
         let jellyfishNode = jellyfishScene?.rootNode.childNode(withName: "Jellyfish", recursively: false)
-        let x = RandomNumbers(firstNum: -1.0, secondNum: 1.0)
-        let y = RandomNumbers(firstNum: -1.0, secondNum: 1.0)
-        let z = RandomNumbers(firstNum: -1.0, secondNum: 1.0)
+        let x = RandomNumbers(firstNum: -0.5, secondNum: 0.5)
+        let y = RandomNumbers(firstNum: -0.5, secondNum: 0.5)
+        let z = RandomNumbers(firstNum: -0.5, secondNum: -1.0)
         jellyfishNode?.position = SCNVector3(x, y, z)
         self.sceneView.scene.rootNode.addChildNode(jellyfishNode!)
     }
     
+    /*
+     Description:
+        This function is used to handle tap events
+     Input:
+        @ UITapGestureRecognizer sender: a gesture recognizer
+    */
     @objc func handleTap(sender: UITapGestureRecognizer){
         
         let sceneViewTappedOn = sender.view as! SCNView
@@ -51,23 +88,35 @@ class ViewController: UIViewController {
         let hitTest = sceneViewTappedOn.hitTest(touchCoordinates)
         
         if hitTest.isEmpty {
-            print("didn't touch anything")
+            // touch nothing
         } else {
-            let results = hitTest.first!
-            let node = results.node
-            if node.animationKeys.isEmpty {
-                // only if the animationKeys is empty, unless the continuous touching will destrop the animation
-                SCNTransaction.begin()
-                self.animateNode(node: results.node)
-                SCNTransaction.completionBlock = {
-                    node.removeFromParentNode()
-                    self.addNode()
+            // touch the object
+            if countdown > 0 {
+                let results = hitTest.first!
+                let node = results.node
+                if node.animationKeys.isEmpty {
+                    // only if the animationKeys is empty, unless the continuous touching will destrop the animation
+                    SCNTransaction.begin()
+                    self.animateNode(node: results.node)
+                    SCNTransaction.completionBlock = {
+                        node.removeFromParentNode()
+                        self.addNode()
+                        self.RestoreTiemr()
+                    }
+                    SCNTransaction.commit()
                 }
-                SCNTransaction.commit()
             }
         }
     }
     
+    /*
+     Description:
+        This function is used to add animation for a given node
+     Input:
+        @ SCNNode node: a given node
+     Output:
+        @ void returnValue: void
+    */
     func animateNode(node: SCNNode) {
         let spin = CABasicAnimation(keyPath: "position")
         spin.fromValue = node.presentation.position
@@ -87,8 +136,41 @@ class ViewController: UIViewController {
      Output:
      @ CGFloat returnValue: a random number
      */
-    func RandomNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat{
+    func RandomNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat {
         return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
+    }
+    
+    /*
+     Description:
+        This function is used to set a timer
+     Input:
+        @ void paramter: void
+     Output:
+        @ void returnValue: void
+    */
+    func SetTimer() {
+        self.timer.perform{ () -> NextStep in
+            self.countdown -= 1
+            self.labelTimer.text = "Countdown: " + String(self.countdown)
+            if self.countdown == 0 {
+                self.labelTimer.text = "You Lose"
+                return .stop
+            }
+            return .continue
+        }
+    }
+    
+    /*
+     Description:
+        This function is used to reset the timer
+     Input:
+        @ void paramter: void
+     Output:
+        @ void returnValue: void
+     */
+    func RestoreTiemr() {
+        self.countdown = 10
+        self.labelTimer.text = "Countdown: " + String(self.countdown)
     }
 }
 
