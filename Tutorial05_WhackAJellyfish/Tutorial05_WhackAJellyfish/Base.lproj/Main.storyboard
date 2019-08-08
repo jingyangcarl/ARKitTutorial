@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tutorial05_WhackAJellyfish" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTP-fV-yhl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8w-rx-nU9">
+                                <rect key="frame" x="20" y="782" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Aiz-xl-fJk"/>
+                                    <constraint firstAttribute="height" constant="80" id="LJh-IP-bXB"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Play"/>
+                                <connections>
+                                    <action selector="ButtonPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gpj-Cf-PL2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHo-lN-iI2">
+                                <rect key="frame" x="314" y="782" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="l7j-iV-ADp"/>
+                                    <constraint firstAttribute="height" constant="80" id="yf2-u0-fAg"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Reset"/>
+                                <connections>
+                                    <action selector="ButtonReset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vJo-Om-GCl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QTP-fV-yhl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1vo-oj-qrX"/>
+                            <constraint firstItem="QTP-fV-yhl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4uD-RD-thO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cHo-lN-iI2" secondAttribute="trailing" constant="20" id="7cZ-hN-bDJ"/>
+                            <constraint firstAttribute="bottom" secondItem="QTP-fV-yhl" secondAttribute="bottom" id="bjQ-mY-VhC"/>
+                            <constraint firstItem="QTP-fV-yhl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="c4k-xf-qzb"/>
+                            <constraint firstItem="cHo-lN-iI2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="f7c-4j-t6h"/>
+                            <constraint firstItem="U8w-rx-nU9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jD5-bs-gsU"/>
+                            <constraint firstItem="U8w-rx-nU9" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xDr-gu-BKd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonPlay" destination="U8w-rx-nU9" id="0gK-go-MLT"/>
+                        <outlet property="sceneView" destination="QTP-fV-yhl" id="ZH1-A0-hU4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Play" width="50" height="50"/>
+        <image name="Reset" width="50" height="50"/>
+    </resources>
+</document>
