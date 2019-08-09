@@ -2,7 +2,7 @@ Tutorial 03 - AR Drawing
 ====================
 
 ## Tutorial 03 Result:
-![Tutorial 03 Result](https://github.com/jingyangcarl/ARKitTutorial/blob/master/Tutorial03_ARDrawing/Tutorial03_ARDrawing/result.gif)
+![Tutorial 03 Result](https://github.com/jingyangcarl/Resources/blob/master/ARKitTutorial/Tutorial03_ARDrawing/result.gif)
 
 ## Solution Introduction
 This tutorial solution introduces how to draw a 3D geometry using ARKit with knowledge of view matrix;
