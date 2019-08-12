@@ -32,6 +32,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // Do any additional setup after loading the view.
     }
     
+    /*
+     Description:
+        This function is used to register all gesture recognizers
+     Input:
+        @ nil parameter: nil
+     Output:
+        @ nil returnValue: nil
+    */
     func registerGestureRecognizers() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
         self.sceneView.addGestureRecognizer(tapGestureRecognizer)
@@ -44,6 +52,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.sceneView.addGestureRecognizer(longPressGestureRecognizer)
     }
     
+    /*
+     Description:
+        This function is an object-c function used as an action to detect tapping event
+     Input:
+        @ UITapGesturerecognizer sender: a tap gesture recognizer
+     Output:
+        @ nil returnValue: nil
+    */
     @objc func tapped(sender: UITapGestureRecognizer) {
         let sceneView = sender.view as! ARSCNView
         let tapLocation = sender.location(in: sceneView)
@@ -55,6 +71,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
+    /*
+     Description:
+        This function is an object-c function used as an action to pinch an object
+     Input:
+        @ UIPinchGestureRecognizer sender: a pinch gesture recognizer
+     Output:
+        @ nil returnValue: nil
+    */
     @objc func pinch(sender: UIPinchGestureRecognizer) {
         let sceneView = sender.view as! ARSCNView
         let pinchLocation = sender.location(in: sceneView)
@@ -69,6 +93,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
+    /*
+     Description:
+        This function is an object-c function used as an action to rotate an object
+     Input:
+        @ UILongPressGestureRecognizer sender: a long press gesture recognizer
+     Output:
+        @ nil returnValue: nil
+    */
     @objc func rotate(sender: UILongPressGestureRecognizer) {
         
         let sceneView = sender.view as! ARSCNView
@@ -77,7 +109,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if !hitTest.isEmpty {
             
             let result = hitTest.first!
-            
             if sender.state == .began {
                 let rotation = SCNAction.rotateBy(x: 0, y: CGFloat(360.degreesToRadians), z: 0, duration: 1)
                 let forever = SCNAction.repeatForever(rotation)
@@ -88,6 +119,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
+    /*
+     Description:
+        This function is used to center the pivot
+     Input:
+        @ SCNNode for node: a SCNNode need to be centralized
+     Output:
+        @ nil returnValue: nil
+    */
     func centerPivot(for node: SCNNode) {
         let min = node.boundingBox.min
         let max = node.boundingBox.max
@@ -97,7 +136,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             min.z + (max.z - min.z) / 2)
     }
     
-    
+    /*
+     Description:
+        This function is used to add an item to scene view
+     Input:
+        @ ARHitTestResult hitTestResult: a hit test result
+     Output:
+        @ nil returnValue: nil
+    */
     func addItem(hitTestResult: ARHitTestResult) {
         if let selectedItem = self.selectedItem {
             let scene = SCNScene(named: "Models.scnassets/\(selectedItem).scn")
@@ -190,6 +236,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 }
 
 extension Int {
+    /*
+     Description:
+        This function is used to convert degrees to radians
+     Input:
+        @ double parameter: a degree value
+     Output:
+        @ double returnValue: a radian value
+     */
     var degreesToRadians: Double {
         return Double(self) * .pi/180
     }
