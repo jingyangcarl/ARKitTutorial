@@ -89,6 +89,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 }
 
 extension Int {
+    /*
+     Description:
+        This function is used to convert degrees to radians
+     Input:
+        @ double parameter: a degree value
+     Output:
+        @ double returnValue: a radian value
+     */
     var degreesToRadians: Double {
         return Double(self) * .pi/180
     }
