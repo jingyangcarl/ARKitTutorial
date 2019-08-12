@@ -13,6 +13,7 @@
 		4130B35422FE3D2700411E42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4130B35322FE3D2700411E42 /* Assets.xcassets */; };
 		4130B35722FE3D2700411E42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4130B35522FE3D2700411E42 /* LaunchScreen.storyboard */; };
 		4130B35F22FE41B800411E42 /* itemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4130B35E22FE41B800411E42 /* itemCell.swift */; };
+		4130B37322FE4A4600411E42 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 4130B37222FE4A4600411E42 /* Models.scnassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		4130B35622FE3D2700411E42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4130B35822FE3D2700411E42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4130B35E22FE41B800411E42 /* itemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemCell.swift; sourceTree = "<group>"; };
+		4130B37222FE4A4600411E42 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
+		4130B3742301ECFB00411E42 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +43,7 @@
 		4130B34022FE3D2600411E42 = {
 			isa = PBXGroup;
 			children = (
+				4130B3742301ECFB00411E42 /* README.md */,
 				4130B34B22FE3D2600411E42 /* Tutorial07_Ikea */,
 				4130B34A22FE3D2600411E42 /* Products */,
 			);
@@ -63,6 +67,7 @@
 				4130B35522FE3D2700411E42 /* LaunchScreen.storyboard */,
 				4130B35822FE3D2700411E42 /* Info.plist */,
 				4130B35E22FE41B800411E42 /* itemCell.swift */,
+				4130B37222FE4A4600411E42 /* Models.scnassets */,
 			);
 			path = Tutorial07_Ikea;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4130B35722FE3D2700411E42 /* LaunchScreen.storyboard in Resources */,
+				4130B37322FE4A4600411E42 /* Models.scnassets in Resources */,
 				4130B35422FE3D2700411E42 /* Assets.xcassets in Resources */,
 				4130B35222FE3D2600411E42 /* Main.storyboard in Resources */,
 			);

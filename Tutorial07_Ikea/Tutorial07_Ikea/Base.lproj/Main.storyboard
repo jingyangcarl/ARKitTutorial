@@ -60,21 +60,35 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plane Detected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQ0-Or-VgF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="YjV-hJ-wrt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="5of-em-FkA" secondAttribute="bottom" id="AAN-N1-oEC"/>
+                            <constraint firstItem="XQ0-Or-VgF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DnS-7m-tyh"/>
                             <constraint firstItem="STs-Uj-Hnr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="GtW-gj-jTe"/>
+                            <constraint firstItem="XQ0-Or-VgF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vnq-9R-RkZ"/>
+                            <constraint firstItem="XQ0-Or-VgF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aHo-Ew-966"/>
                             <constraint firstItem="STs-Uj-Hnr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aMV-Pn-B8K"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="STs-Uj-Hnr" secondAttribute="trailing" constant="20" id="agu-T6-JCH"/>
                             <constraint firstItem="5of-em-FkA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="feK-ak-tvI"/>
                             <constraint firstItem="5of-em-FkA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hhM-0J-8F2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XQ0-Or-VgF" secondAttribute="trailing" id="icK-rZ-WOS"/>
                             <constraint firstItem="5of-em-FkA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oT6-tk-iA5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="itemsCollectionView" destination="STs-Uj-Hnr" id="3AD-5j-wYQ"/>
+                        <outlet property="labelPlaneDetected" destination="XQ0-Or-VgF" id="glD-Az-C1i"/>
                         <outlet property="sceneView" destination="5of-em-FkA" id="2Ct-1m-VDm"/>
                     </connections>
                 </viewController>

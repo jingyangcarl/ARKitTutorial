@@ -66,6 +66,8 @@ class ViewController: UIViewController {
         @ void returnValue: void
     */
     func addNode(){
+        // the jellyfish model can be found on the following link:
+        // https://www.turbosquid.com
         let jellyfishScene = SCNScene(named: "art.scnassets/Jellyfish.scn")
         let jellyfishNode = jellyfishScene?.rootNode.childNode(withName: "Jellyfish", recursively: false)
         let x = RandomNumbers(firstNum: -0.5, secondNum: 0.5)
