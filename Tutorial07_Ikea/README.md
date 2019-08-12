@@ -2,7 +2,7 @@ Tutorial 07 - Ikea
 ====================
 
 ## Tutorial 07 Result:
-![Tutorial 07 Result](https://github.com/jingyangcarl/Resources/ARKitTutorial/Tutorial07_Ikea/result.gif)
+![Tutorial 07 Result](https://github.com/jingyangcarl/Resources/blob/master/ARKitTutorial/Tutorial07_Ikea/result.gif)
 
 ## Solution Introduction
 This tutorial solution introduces GestureRecognizers, which is used to detect touch, pinch, long press events. 
