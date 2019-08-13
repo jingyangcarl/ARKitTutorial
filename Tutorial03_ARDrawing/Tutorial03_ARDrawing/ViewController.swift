@@ -26,7 +26,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     /*
      Description:
-        This function is used to render the scene
+        This function is used to tell the delegate that the renderer has cleared the viewport and is about to render to scene. In this case, if the button is pushed, spheres will be continuously placed at where the camera is, if the button is not pushed, a sphere (marker) will be placed at where the camera and then removed.
+     Input:
+        @ SCNSceneRenderer _ renderer: a renderer
+        @ SCNScene willRenderScene scene: a scene to be rendered
+        @ TimeInterval atTime time: the current system time
+     Output:
+        @ nil returnValue: nil
     */
     func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: TimeInterval) {
         guard let pointOfView = sceneView.pointOfView else {return}
