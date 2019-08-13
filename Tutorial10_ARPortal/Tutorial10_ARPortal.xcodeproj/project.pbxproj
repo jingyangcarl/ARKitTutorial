@@ -24,6 +24,7 @@
 		4130B3AC2303261800411E42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4130B3AE2303261800411E42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4130B3B623032DDC00411E42 /* Portal.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Portal.scnassets; sourceTree = "<group>"; };
+		4130B3B82303402500411E42 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 		4130B3962303261700411E42 = {
 			isa = PBXGroup;
 			children = (
+				4130B3B82303402500411E42 /* README.md */,
 				4130B3A12303261700411E42 /* Tutorial10_ARPortal */,
 				4130B3A02303261700411E42 /* Products */,
 			);
