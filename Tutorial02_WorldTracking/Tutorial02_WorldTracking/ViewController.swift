@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 
     /*
      Description:
-        This function is a callback funciton for button Add
+        This function is the callback funciton of button Add
      Input:
         @ Any: sender
      */
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         roofNode.position = SCNVector3(roofOffX, roofOffY, roofOffZ)
         node.addChildNode(roofNode)
         
-        // a doorNode with relative position ()
+        // a doorNode with relative position (doorOffX, doorOffY, doorOffZ)
         let doorNode = SCNNode()
         doorNode.geometry = SCNPlane(width: 0.03, height: 0.06)
         doorNode.geometry?.firstMaterial?.diffuse.contents = UIColor.brown
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     
     /*
      Description:
-        This function is a callback funciton for button Reset
+        This function is the callback function of button Reset
      Input:
         @ Any: sender
      */
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
     
     /*
      Description:
-        This function is used to generate a random number between a given range
+        This function is used to generate a random number from a given range
      Input:
         @ CGFloat firstNum: minimum of the range
         @ CGFloat secondNum: maximum of the range
@@ -92,6 +92,14 @@ class ViewController: UIViewController {
 }
 
 extension Int{
+    /*
+     Description:
+        This function is used to convert degrees to radians
+     Input:
+        @ double parameter: a degree value
+     Output:
+        @ double returnValue: a radian value
+     */
     var degreesToRadians: Double{
         return Double(self) * .pi/180
     }
