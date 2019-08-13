@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5r-HK-gLU">
-                                <rect key="frame" x="184" y="852" width="46" height="30"/>
+                                <rect key="frame" x="184" y="832" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="perform:" destination="BYZ-38-t0r" eventType="touchUpInside" id="evU-ku-I7R"/>
@@ -38,7 +38,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gBX-ne-xcS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="524-Fb-n1h"/>
-                            <constraint firstItem="g5r-HK-gLU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="20" id="Qvu-bS-ppw"/>
+                            <constraint firstItem="g5r-HK-gLU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Qvu-bS-ppw"/>
                             <constraint firstItem="gBX-ne-xcS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cZZ-JZ-KrS"/>
                             <constraint firstItem="g5r-HK-gLU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ibo-qV-wGH"/>
                         </constraints>
