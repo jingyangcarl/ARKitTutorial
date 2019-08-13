@@ -14,7 +14,9 @@ This tutorial solution introduces how to draw a 3D geometry using ARKit with kno
 ## Solution Documentation:
 > ViewController.swift
 >
->> **func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: TimeInterval):** This function is used to tell the delegate that the renderer has cleared the viewport and is about to render to scene. In this case, if the button is pushed, spheres will be continuously placed at where the camera is, if the button is not pushed, a sphere (marker) will be placed at where the camera and then removed.
+>> **override func viewDidLoad():** This function is used to do intiialization after the view is loaded;
+>>
+>> **func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: TimeInterval):** This function is used to tell the delegate that the renderer has cleared the viewport and is about to render to scene. In this case, if the button is pushed, spheres will be continuously placed at where the camera is, if the button is not pushed, a sphere (marker) will be placed at where the camera and then removed;
 >
 
 ## Solution Hierarchy:

@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Tutorial04_Planets
 //
-//  Created by qingguo xu on 8/7/19.
+//  Created by Jing Yang on 8/7/19.
 //  Copyright © 2019 Jing Yang. All rights reserved.
 //
 
@@ -23,6 +23,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    /*
+     Description:
+        This function notifies the view controller that its view was added to a view hierarchy. In this case, the function is used to do solar system initialization after the view is appear
+     Input:
+        @ Bool _ animated: if true, the view was added to the window using an animation
+     Output:
+        @ nil returnValue: nil
+     */
     override func viewDidAppear(_ animated: Bool) {
         
         // generate the center of solar system
