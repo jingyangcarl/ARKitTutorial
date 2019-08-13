@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,7 @@
 		4130B3CF2303582100411E42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4130B3D12303582100411E42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4130B3D923035CCC00411E42 /* Basketball.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Basketball.scnassets; sourceTree = "<group>"; };
+		4130B3DB23036A3800411E42 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4A8605CB06D003B23BCB4930 /* Pods-Tutorial11_ARHoops.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial11_ARHoops.release.xcconfig"; path = "Target Support Files/Pods-Tutorial11_ARHoops/Pods-Tutorial11_ARHoops.release.xcconfig"; sourceTree = "<group>"; };
 		6E230691462F09ADFCFB05F5 /* Pods_Tutorial11_ARHoops.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tutorial11_ARHoops.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -45,6 +46,7 @@
 		4130B3B92303582000411E42 = {
 			isa = PBXGroup;
 			children = (
+				4130B3DB23036A3800411E42 /* README.md */,
 				4130B3C42303582000411E42 /* Tutorial11_ARHoops */,
 				4130B3C32303582000411E42 /* Products */,
 				AC2F5468FB09A3CBA2CEF7F3 /* Pods */,
@@ -88,7 +90,6 @@
 				1A2D8CE9AFD2DF0D3C8D77E7 /* Pods-Tutorial11_ARHoops.debug.xcconfig */,
 				4A8605CB06D003B23BCB4930 /* Pods-Tutorial11_ARHoops.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
