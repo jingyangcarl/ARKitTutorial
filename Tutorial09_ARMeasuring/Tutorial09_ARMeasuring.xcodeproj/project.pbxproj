@@ -22,6 +22,7 @@
 		4130B38A2302386800411E42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4130B38D2302386800411E42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4130B38F2302386800411E42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4130B3952303240C00411E42 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +39,7 @@
 		4130B3772302386600411E42 = {
 			isa = PBXGroup;
 			children = (
+				4130B3952303240C00411E42 /* README.md */,
 				4130B3822302386600411E42 /* Tutorial09_ARMeasuring */,
 				4130B3812302386600411E42 /* Products */,
 			);
