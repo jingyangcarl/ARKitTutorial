@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tutorial10_ARPortal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMa-kJ-5iT">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </arscnView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plane Detected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWh-4t-djW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3Tk-Nf-cMv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oMa-kJ-5iT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0vW-qf-mLh"/>
+                            <constraint firstItem="oMa-kJ-5iT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1LM-ZP-XcS"/>
+                            <constraint firstItem="KWh-4t-djW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D4N-Fj-0g6"/>
+                            <constraint firstItem="KWh-4t-djW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DJ6-OO-P9E"/>
+                            <constraint firstAttribute="bottom" secondItem="oMa-kJ-5iT" secondAttribute="bottom" id="Kk1-hO-BBp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KWh-4t-djW" secondAttribute="trailing" id="VVd-x1-clf"/>
+                            <constraint firstItem="KWh-4t-djW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fQt-K4-BWm"/>
+                            <constraint firstItem="oMa-kJ-5iT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ihd-YF-YCL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelPlaneDetected" destination="KWh-4t-djW" id="9H4-ES-bVt"/>
+                        <outlet property="sceneView" destination="oMa-kJ-5iT" id="9pT-Fk-vRJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+</document>
