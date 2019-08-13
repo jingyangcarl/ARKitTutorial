@@ -11,9 +11,9 @@ This tutorial introduces how to build an simple counter app using Xcode with swi
 ## Solution Documentation:
 > ViewController.swift
 >
->> override func viewDidLoad(): This function is used to do initialization after the view is loaded;
+>> **override func viewDidLoad():** This function is used to do initialization after the view is loaded;
 >>
->> @IBAction func perform(_ sender: Any): This function is the callback function of the button, which is used to increase the label content by one;
+>> **@IBAction func perform(_ sender: Any):** This function is the callback function of the button, which is used to increase the label content by one;
 >
 
 ## Solution Hierarchy:

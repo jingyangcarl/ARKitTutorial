@@ -14,11 +14,11 @@ This tutorial solution introduces a template to develop AR applications using Xc
 ## Solution Documentation:
 > ViewController.swift
 >
->> override func viewDidLoad(): This function is used to do initialization after the view is loaded;
+>> **override func viewDidLoad():** This function is used to do initialization after the view is loaded;
 >>
->> @IBAction func ButtonAdd(_ sender: Any): This function is the callback function of button Add, which is used to add a house node into the scene;
+>> **@IBAction func ButtonAdd(_ sender: Any):** This function is the callback function of button Add, which is used to add a house node into the scene;
 >>
->> @IBAction func ButtonReset(_ sender: Any): This function is the callback function of button Reset, which is used to remove all house nodes from the scene;
+>> **@IBAction func ButtonReset(_ sender: Any):** This function is the callback function of button Reset, which is used to remove all house nodes from the scene;
 >
 
 ## Solution Hierarchy:
