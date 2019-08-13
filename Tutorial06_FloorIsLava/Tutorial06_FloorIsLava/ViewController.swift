@@ -22,6 +22,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Do any additional setup after loading the view.
     }
     
+    /*
+     Description:
+        This function is used to generate a lava node
+     Input:
+        @ ARPlaneAnchor planeAnchor: a plane anchor
+     Output:
+        @ SCNNode returnValue: a lava node
+    */
     func createLavaNode(planeAnchor: ARPlaneAnchor) -> SCNNode {
         let lavaNode = SCNNode(geometry: SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z)))
         lavaNode.geometry?.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "Lava")
