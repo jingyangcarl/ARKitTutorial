@@ -1,0 +1,12 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Tutorial11_ARHoops' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Tutorial11_ARHoops
+  # https://github.com/dalu93/Each
+  pod 'Each', '~> 1.2'
+
+end
