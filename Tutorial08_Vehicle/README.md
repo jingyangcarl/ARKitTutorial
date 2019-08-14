@@ -40,5 +40,17 @@ This tutorial solution introduces accelerometer and graphics body to create a ve
 ## Solution Hierarchy:
 ```
 ./Tutorial08_Vehicle
-
+├───Tutorial08_Vehicle
+│   ├───Assets.xcassets
+│   │   ├───AppIcon.appiconset
+│   │   └───Concrete.imageset
+│   └───Base.lproj
+└───Tutorial08_Vehicle.xcodeproj
+    ├───project.xcworkspace
+    │   ├───xcshareddata
+    │   └───xcuserdata
+    │       └───qingguoxu.xcuserdatad
+    └───xcuserdata
+        └───qingguoxu.xcuserdatad
+            └───xcschemes
 ```
