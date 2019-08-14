@@ -25,5 +25,17 @@ This tutorial solution introduces another way to use view matrix and build up a 
 ## Solution Hierarchy:
 ```
 ./Tutorial09_ARMeasuring
-
+├───Tutorial09_ARMeasuring
+│   ├───Assets.xcassets
+│   │   ├───Add.imageset
+│   │   └───AppIcon.appiconset
+│   └───Base.lproj
+└───Tutorial09_ARMeasuring.xcodeproj
+    ├───project.xcworkspace
+    │   ├───xcshareddata
+    │   └───xcuserdata
+    │       └───qingguoxu.xcuserdatad
+    └───xcuserdata
+        └───qingguoxu.xcuserdatad
+            └───xcschemes
 ```
