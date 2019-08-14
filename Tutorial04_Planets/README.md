@@ -26,5 +26,31 @@ This tutorial solution introduces how to use texture on a spherical object, and 
 ## Solution Hierarchy:
 ```
 ./Tutorial04_Planets
-
+├───Tutorial04_Planets
+│   ├───Assets.xcassets
+│   │   ├───AppIcon.appiconset
+│   │   ├───Earth Diffuse.imageset
+│   │   ├───Earth Emission.imageset
+│   │   ├───Earth Normal.imageset
+│   │   ├───Earth Specular.imageset
+│   │   ├───Jupiter Diffuse.imageset
+│   │   ├───Mars Diffuse.imageset
+│   │   ├───Mercury Diffuse.imageset
+│   │   ├───Moon Diffuse.imageset
+│   │   ├───Neptune Diffuse.imageset
+│   │   ├───Saturn Diffuse.imageset
+│   │   ├───Saturn Ring Diffuse.imageset
+│   │   ├───Sun Diffuse.imageset
+│   │   ├───Uranus Diffuse.imageset
+│   │   ├───Venus Diffuse.imageset
+│   │   └───Venus Emission.imageset
+│   └───Base.lproj
+└───Tutorial04_Planets.xcodeproj
+    ├───project.xcworkspace
+    │   ├───xcshareddata
+    │   └───xcuserdata
+    │       └───qingguoxu.xcuserdatad
+    └───xcuserdata
+        └───qingguoxu.xcuserdatad
+            └───xcschemes
 ```
