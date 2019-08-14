@@ -30,7 +30,7 @@ This tutorial solution introduces GestureRecognizers, which is used to detect to
 >>
 >> **func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int:** This function is used to ask your data source ojbect for the number of items in the specified section, which indicates the number of cells;
 >>
->> **func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell** This function is used to initialize cells in item collection view;
+>> **func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell:** This function is used to initialize cells in item collection view;
 >>
 >> **func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath):** This function is used to deal with cell selection event;
 >>
