@@ -28,4 +28,17 @@ This tutorial solution introduces plane detection, and tell the difference betwe
 ## Solution Hierarchy:
 ```
 ./Tutorial06_FloorIsLava
+├───Tutorial06_FloorIsLava
+│   ├───Assets.xcassets
+│   │   ├───AppIcon.appiconset
+│   │   └───Lava.imageset
+│   └───Base.lproj
+└───Tutorial06_FloorIsLava.xcodeproj
+    ├───project.xcworkspace
+    │   ├───xcshareddata
+    │   └───xcuserdata
+    │       └───qingguoxu.xcuserdatad
+    └───xcuserdata
+        └───qingguoxu.xcuserdatad
+            └───xcschemes
 ```
