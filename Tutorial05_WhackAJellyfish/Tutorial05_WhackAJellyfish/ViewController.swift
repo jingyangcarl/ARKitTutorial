@@ -12,26 +12,60 @@ import Each
 
 class ViewController: UIViewController {
 
-    var timer = Each(1).seconds
-    var countdown = 10
-    @IBOutlet weak var labelTimer: UILabel!
     @IBOutlet weak var sceneView: ARSCNView!
+    @IBOutlet weak var labelTimer: UILabel!
     @IBOutlet weak var buttonPlay: UIButton!
     let configuration = ARWorldTrackingConfiguration()
+    var timer = Each(1).seconds
+    var countdown = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // self.sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
         self.sceneView.session.run(configuration)
         
+        // add tap gesture recognizer
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         self.sceneView.addGestureRecognizer(tapGestureRecognizer)
         // Do any additional setup after loading the view.
     }
+    
+    /*
+     Description:
+        This function is used to handle tap events
+     Input:
+        @ UITapGestureRecognizer sender: a gesture recognizer
+     */
+    @objc func handleTap(sender: UITapGestureRecognizer){
+        
+        let sceneViewTappedOn = sender.view as! SCNView
+        let touchCoordinates = sender.location(in: sceneViewTappedOn)
+        let hitTest = sceneViewTappedOn.hitTest(touchCoordinates)
+        
+        if hitTest.isEmpty {
+            // touch nothing
+        } else {
+            // touch the object
+            if countdown > 0 {
+                let results = hitTest.first!
+                let node = results.node
+                if node.animationKeys.isEmpty {
+                    // only if the animationKeys is empty, unless the continuous touching will destrop the animation
+                    SCNTransaction.begin()
+                    self.animateNode(node: results.node)
+                    SCNTransaction.completionBlock = {
+                        node.removeFromParentNode()
+                        self.addNode()
+                        self.RestoreTiemr()
+                    }
+                    SCNTransaction.commit()
+                }
+            }
+        }
+    }
 
     /*
      Description:
-        This function is used to process button play
+        This function is the callback function of button Play, which is used to trigger the timer and generate jellyfish
      Input:
         @ Any _ sender: any sender
     */
@@ -43,7 +77,7 @@ class ViewController: UIViewController {
     
     /*
      Description:
-        This function is used to process button reset
+        This function is the callback function of button Reset, which is used to remove all jellyfish nodes from the scene and reset the timer
      Input:
         @ Any _ sender: any sender
      */
@@ -79,41 +113,7 @@ class ViewController: UIViewController {
     
     /*
      Description:
-        This function is used to handle tap events
-     Input:
-        @ UITapGestureRecognizer sender: a gesture recognizer
-    */
-    @objc func handleTap(sender: UITapGestureRecognizer){
-        
-        let sceneViewTappedOn = sender.view as! SCNView
-        let touchCoordinates = sender.location(in: sceneViewTappedOn)
-        let hitTest = sceneViewTappedOn.hitTest(touchCoordinates)
-        
-        if hitTest.isEmpty {
-            // touch nothing
-        } else {
-            // touch the object
-            if countdown > 0 {
-                let results = hitTest.first!
-                let node = results.node
-                if node.animationKeys.isEmpty {
-                    // only if the animationKeys is empty, unless the continuous touching will destrop the animation
-                    SCNTransaction.begin()
-                    self.animateNode(node: results.node)
-                    SCNTransaction.completionBlock = {
-                        node.removeFromParentNode()
-                        self.addNode()
-                        self.RestoreTiemr()
-                    }
-                    SCNTransaction.commit()
-                }
-            }
-        }
-    }
-    
-    /*
-     Description:
-        This function is used to add animation for a given node
+        This function is used to generate animation for a given node
      Input:
         @ SCNNode node: a given node
      Output:
@@ -131,12 +131,12 @@ class ViewController: UIViewController {
     
     /*
      Description:
-     This function is used to generate a random number between a given range
+        This function is used to generate a random number from a given range
      Input:
-     @ CGFloat firstNum: minimum of the range
-     @ CGFloat secondNum: maximum of the range
+        @ CGFloat firstNum: minimum of the range
+        @ CGFloat secondNum: maximum of the range
      Output:
-     @ CGFloat returnValue: a random number
+        @ CGFloat returnValue: a random number
      */
     func RandomNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat {
         return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
