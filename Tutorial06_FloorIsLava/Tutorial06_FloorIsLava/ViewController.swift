@@ -13,6 +13,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet weak var sceneView: ARSCNView!
     let configuration = ARWorldTrackingConfiguration()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
@@ -24,7 +25,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     /*
      Description:
-        This function is used to generate a lava node
+        This function is used to generate a lava node based on where the plane is detected
      Input:
         @ ARPlaneAnchor planeAnchor: a plane anchor
      Output:
