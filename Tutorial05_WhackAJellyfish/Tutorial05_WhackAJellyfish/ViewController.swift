@@ -95,9 +95,9 @@ class ViewController: UIViewController {
      Description:
         This function is used to add a node to the sceneView
      Input:
-        @ void parameter: void
+        @ nil parameter: nil
      Output:
-        @ void returnValue: void
+        @ nil returnValue: nil
     */
     func addNode(){
         // the jellyfish model can be found on the following link:
@@ -117,7 +117,7 @@ class ViewController: UIViewController {
      Input:
         @ SCNNode node: a given node
      Output:
-        @ void returnValue: void
+        @ nil returnValue: nil
     */
     func animateNode(node: SCNNode) {
         let spin = CABasicAnimation(keyPath: "position")
@@ -146,9 +146,9 @@ class ViewController: UIViewController {
      Description:
         This function is used to set a timer
      Input:
-        @ void paramter: void
+        @ nil paramter: nil
      Output:
-        @ void returnValue: void
+        @ nil returnValue: nil
     */
     func SetTimer() {
         self.timer.perform{ () -> NextStep in
@@ -166,9 +166,9 @@ class ViewController: UIViewController {
      Description:
         This function is used to reset the timer
      Input:
-        @ void paramter: void
+        @ nil paramter: nil
      Output:
-        @ void returnValue: void
+        @ nil returnValue: nil
      */
     func RestoreTiemr() {
         self.countdown = 10
