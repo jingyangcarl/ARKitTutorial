@@ -29,5 +29,17 @@ This tutorial solution introduces how to set up a cube map with masks in AR envi
 ## Solution Hierarchy:
 ```
 ./Tutorial10_ARPortal
-
+├───Tutorial10_ARPortal
+│   ├───Assets.xcassets
+│   │   └───AppIcon.appiconset
+│   ├───Base.lproj
+│   └───Portal.scnassets
+└───Tutorial10_ARPortal.xcodeproj
+    ├───project.xcworkspace
+    │   ├───xcshareddata
+    │   └───xcuserdata
+    │       └───qingguoxu.xcuserdatad
+    └───xcuserdata
+        └───qingguoxu.xcuserdatad
+            └───xcschemes
 ```
