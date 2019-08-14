@@ -42,5 +42,17 @@ This tutorial solution introduces GestureRecognizers, which is used to detect to
 ## Solution Hierarchy:
 ```
 ./Tutorial07_Ikea
-
+├───Tutorial07_Ikea
+│   ├───Assets.xcassets
+│   │   └───AppIcon.appiconset
+│   ├───Base.lproj
+│   └───Models.scnassets
+└───Tutorial07_Ikea.xcodeproj
+    ├───project.xcworkspace
+    │   ├───xcshareddata
+    │   └───xcuserdata
+    │       └───qingguoxu.xcuserdatad
+    └───xcuserdata
+        └───qingguoxu.xcuserdatad
+            └───xcschemes
 ```
