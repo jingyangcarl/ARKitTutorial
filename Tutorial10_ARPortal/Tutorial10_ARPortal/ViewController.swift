@@ -26,6 +26,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Do any additional setup after loading the view.
     }
     
+    /*
+     Description:
+        This function is an interface from ARSCNViewDelegate, which is called whenever an ARAnchor is discovered, it adds a new ARAnchor to the scene
+     Input:
+        @ SCNSceneRenderer _ renderer: The ARSCNView object rendering the scene
+        @ SCNNode didAdd node: the newly added ScneeKit node
+        @ ARAnchor for anchor: the AR anchor corresponding to the node
+     Output:
+        @ nil returnValue: nil
+     */
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard anchor is ARPlaneAnchor else {return}
         DispatchQueue.main.async {
@@ -38,6 +48,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
+    /*
+     Description:
+        This function is used to handle tap events
+     Input:
+        @ UITapGestureRecognizer sender: a gesture recognizer
+     */
     @objc func handleTap(sender: UITapGestureRecognizer) {
         guard let sceneView = sender.view as? ARSCNView else {return}
         let touchLocation = sender.location(in: sceneView)
@@ -50,6 +66,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
+    /*
+     Description:
+        This function is used to load scene and load skybox
+     Input:
+        @ ARHitTestResult hitTestResult: a hit test result
+     Output:
+        @ nil returnValue: nil
+    */
     func addPortal(hitTestResult: ARHitTestResult){
         let portalScene = SCNScene(named: "Portal.scnassets/Portal.scn")
         let portalNode = portalScene!.rootNode.childNode(withName: "Portal", recursively: false)!
@@ -68,12 +92,28 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         self.addWall(nodeName: "glPosX", portalNode: portalNode, imageName: "posx")
     }
     
+    /*
+     Description:
+        This function is used to load a plane with its texture
+     Input:
+     @ String nodeName: node name
+     @ SCNNode portal Node: a scn node
+     @ String imageName: image name
+    */
     func addPlane(nodeName: String, portalNode: SCNNode, imageName: String) {
         let child = portalNode.childNode(withName: nodeName, recursively: true)
         child?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Portal.scnassets/\(imageName).jpg")
         child?.renderingOrder = 200
     }
     
+    /*
+     Description:
+        This function is used to load a wall with its texture
+     Input:
+        @ String nodeName: node name
+        @ SCNNode portal Node: a scn node
+        @ String imageName: image name
+     */
     func addWall(nodeName: String, portalNode: SCNNode, imageName: String) {
         let child = portalNode.childNode(withName: nodeName, recursively: true)
         child?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Portal.scnassets/\(imageName).jpg")

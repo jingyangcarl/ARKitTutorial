@@ -11,4 +11,19 @@ This tutorial solution introduces another way to use view matrix and build up a 
 * MacOS Mojave 10.14.5
 * Xcode 10.3
 
+## Solution Documentation:
+> ViewController.swift
+>
+>> **override func viewDidLoad():** This function is used to do initialization after the view is loaded;
+>>
+>> **@objc func handleTap(sender: UITapGestureRecognizer):** This function is used to handle tap events;
+>>
+>> **func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval):** This function is used to update distance labels;
+>>
+>> **func distanceTravelled(x:Float, y:Float, z:Float) -> Float:** This function is used to calculate distance;
+
 ## Solution Hierarchy:
+```
+./Tutorial09_ARMeasuring
+
+```

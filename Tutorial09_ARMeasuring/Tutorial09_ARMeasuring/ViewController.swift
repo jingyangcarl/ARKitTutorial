@@ -29,6 +29,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Do any additional setup after loading the view.
     }
     
+    /*
+     Description:
+        This function is used to handle tap events
+     Input:
+        @ UITapGestureRecognizer sender: a gesture recognizer
+     */
     @objc func handleTap(sender: UITapGestureRecognizer) {
         guard let sceneView = sender.view as? ARSCNView else {return}
         guard let currentFrame = sceneView.session.currentFrame else {return}
@@ -49,9 +55,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sphere.simdTransform = resultMatrix
         self.sceneView.scene.rootNode.addChildNode(sphere)
         self.startingPosition = sphere
-        
     }
     
+    /*
+     Description:
+        This function is used to update distance labels
+     Input:
+        @ SCNSceneRenderer _ renderer: a renderer
+        @ TimeInterval updateAtTiem time: a system time
+     Output:
+        @ nil returnValue: nil
+    */
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         guard let startingPosition = self.startingPosition else {return}
         guard let pointOfView = self.sceneView.pointOfView else {return}
@@ -69,6 +83,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
+    /*
+     Description:
+        This function is used to calculate distance
+     Input:
+        @ Float x: x distance
+        @ Float y: y distance
+        @ Float z: z distance
+     Output:
+        @ Float returnValue: distance
+    */
     func distanceTravelled(x:Float, y:Float, z:Float) -> Float {
         return sqrtf(x*x + y*y + z*z)
     }

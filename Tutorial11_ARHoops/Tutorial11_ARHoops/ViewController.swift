@@ -32,6 +32,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Do any additional setup after loading the view.
     }
 
+    /*
+     Description:
+        This function is an interface from ARSCNViewDelegate, which is called whenever an ARAnchor is discovered, it adds a new ARAnchor to the scene
+     Input:
+        @ SCNSceneRenderer _ renderer: The ARSCNView object rendering the scene
+        @ SCNNode didAdd node: the newly added ScneeKit node
+        @ ARAnchor for anchor: the AR anchor corresponding to the node
+     Output:
+        @ nil returnValue: nil
+     */
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard anchor is ARPlaneAnchor else {return}
         DispatchQueue.main.async {
@@ -42,6 +52,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }
 
+    /*
+     Description:
+        This function is used to handle tap events
+     Input:
+        @ UITapGestureRecognizer sender: a gesture recognizer
+     */
     @objc func handleTap(sender: UITapGestureRecognizer) {
         guard let sceneView = sender.view as? ARSCNView else {return}
         let touchLocation = sender.location(in: sceneView)
@@ -53,6 +69,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
+    /*
+     Description:
+        This function is used to load scene and display the basket
+     Input:
+        @ ARHitTestResult hitTestResult: a hit test result
+     Output:
+        @ nil returnValue: nil
+    */
     func addBasket(hitTestResult: ARHitTestResult) {
         if basketAdded == false {
             let basketScene = SCNScene(named: "Basketball.scnassets/Basketball.scn")
@@ -70,6 +94,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
+    /*
+     Description:
+        This function is used to deal with touches began, which is used to control the power of ball shooting
+     Input:
+        @ Set<UITouch> _ touches: touches on the screen
+        @ UIEvent? with event: UIEvent
+     Output:
+        @ nil returnValue: nil
+     */
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if self.basketAdded == true {
             // there is a basket
@@ -80,6 +113,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
+    /*
+     Description:
+        This function is used to deal with touches ended, which is used to reset the power of ball shooting
+     Input:
+        @ Set<UITouch> _ touches: touches on the screen
+        @ UIEvent? with event: UIEvent
+     Output:
+        @ nil returnValue: nil
+     */
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if self.basketAdded == true {
             self.timer.stop()
@@ -88,6 +130,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         self.power = 1
     }
     
+    /*
+     Description:
+        This function is used to control how to shoot the ball
+     Input:
+        @ nil parameter: nil
+     Output:
+        @ nil returnValue: nil
+    */
     func shootBall(){
         guard let pointOfView = self.sceneView.pointOfView else {return}
         self.removeEveryOtherBall()
@@ -106,6 +156,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         self.sceneView.scene.rootNode.addChildNode(ball)
     }
     
+    /*
+     Description:
+        This function is used to remove all the balls from current scene
+     Input:
+        @ nil parameter: nil
+     Output:
+        @ nil returnValue: nil
+    */
     func removeEveryOtherBall() {
         self.sceneView.scene.rootNode.enumerateChildNodes{ (node, _) in
             if node.name == "basketball" {
