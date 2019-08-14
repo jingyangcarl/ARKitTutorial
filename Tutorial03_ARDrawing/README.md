@@ -22,5 +22,18 @@ This tutorial solution introduces how to draw a 3D geometry using ARKit with kno
 ## Solution Hierarchy:
 ```
 ./Tutorial03_ARDrawing
-
+├───Tutorial03_ARDrawing
+│   ├───Assets.xcassets
+│   │   └───AppIcon.appiconset
+│   └───Base.lproj
+├───Tutorial03_ARDrawing.xcodeproj
+│   ├───project.xcworkspace
+│   │   ├───xcshareddata
+│   │   └───xcuserdata
+│   │       └───qingguoxu.xcuserdatad
+│   └───xcuserdata
+│       └───qingguoxu.xcuserdatad
+│           └───xcschemes
+├───Tutorial03_ARDrawingTests
+└───Tutorial03_ARDrawingUITests
 ```
