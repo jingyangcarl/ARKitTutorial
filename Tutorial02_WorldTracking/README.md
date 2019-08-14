@@ -24,5 +24,18 @@ This tutorial solution introduces a template to develop AR applications using Xc
 ## Solution Hierarchy:
 ```
 ./Tutorial02_WorldTracking
-
+├───Tutorial02_WorldTracking
+│   ├───Assets.xcassets
+│   │   └───AppIcon.appiconset
+│   └───Base.lproj
+├───Tutorial02_WorldTracking.xcodeproj
+│   ├───project.xcworkspace
+│   │   ├───xcshareddata
+│   │   └───xcuserdata
+│   │       └───qingguoxu.xcuserdatad
+│   └───xcuserdata
+│       └───qingguoxu.xcuserdatad
+│           └───xcschemes
+├───Tutorial02_WorldTrackingTests
+└───Tutorial02_WorldTrackingUITests
 ```
