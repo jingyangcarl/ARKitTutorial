@@ -19,5 +19,16 @@ This tutorial introduces how to build an simple counter app using Xcode with swi
 ## Solution Hierarchy:
 ```
 ./Tutorial01_Counter
-
+├───Tutorial01_Counter
+│   ├───Assets.xcassets
+│   │   └───AppIcon.appiconset
+│   └───Base.lproj
+└───Tutorial01_Counter.xcodeproj
+    ├───project.xcworkspace
+    │   ├───xcshareddata
+    │   └───xcuserdata
+    │       └───qingguoxu.xcuserdatad
+    └───xcuserdata
+        └───qingguoxu.xcuserdatad
+            └───xcschemes
 ```
