@@ -48,6 +48,41 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         concreteNode.physicsBody = staticBody
         return concreteNode
     }
+    
+    /*
+     Description:
+     This function is the callback function of button Add, which is used to add a car node into the scene
+     Input:
+     @ Any _ sender: any sender
+     */
+    @IBAction func addCar(_ sender: Any) {
+        
+        guard let pointOfView = sceneView.pointOfView else {return}
+        let transform = pointOfView.transform
+        let orientation = SCNVector3(-transform.m31, -transform.m32, -transform.m33)
+        let location = SCNVector3(transform.m41, transform.m42, transform.m43)
+        let currentPositionOfCamera = orientation + location
+        
+        let scene = SCNScene(named: "car.scn")
+        let carNode = (scene?.rootNode.childNode(withName: "car", recursively: false))!
+        carNode.position = currentPositionOfCamera
+        let frontLeftWheel = carNode.childNode(withName: "frontLeftParent", recursively: false)!
+        let frontRightWheel = carNode.childNode(withName: "frontRightParent", recursively: false)!
+        let rearLeftWheel = carNode.childNode(withName: "rearLeftParent", recursively: false)!
+        let rearRightWheel = carNode.childNode(withName: "rearRightParent", recursively: false)!
+        
+        let v_frontLeftWheel = SCNPhysicsVehicleWheel(node: frontLeftWheel)
+        let v_frontRightWheel = SCNPhysicsVehicleWheel(node: frontRightWheel)
+        let v_rearRightWheel = SCNPhysicsVehicleWheel(node: rearLeftWheel)
+        let v_rearLeftWheel = SCNPhysicsVehicleWheel(node: rearRightWheel)
+        
+        let body = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(node: carNode, options: [SCNPhysicsShape.Option.keepAsCompound: true]))
+        body.mass = 5
+        carNode.physicsBody = body
+        self.vehicle = SCNPhysicsVehicle(chassisBody: carNode.physicsBody!, wheels: [v_rearLeftWheel, v_rearRightWheel, v_frontLeftWheel, v_frontRightWheel])
+        self.sceneView.scene.physicsWorld.addBehavior(self.vehicle)
+        self.sceneView.scene.rootNode.addChildNode(carNode)
+    }
 
     /*
      Description:
@@ -104,60 +139,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
-    @IBAction func addCar(_ sender: Any) {
-        
-        guard let pointOfView = sceneView.pointOfView else {return}
-        let transform = pointOfView.transform
-        let orientation = SCNVector3(-transform.m31, -transform.m32, -transform.m33)
-        let location = SCNVector3(transform.m41, transform.m42, transform.m43)
-        let currentPositionOfCamera = orientation + location
-        
-        let scene = SCNScene(named: "car.scn")
-        let carNode = (scene?.rootNode.childNode(withName: "car", recursively: false))!
-        carNode.position = currentPositionOfCamera
-        let frontLeftWheel = carNode.childNode(withName: "frontLeftParent", recursively: false)!
-        let frontRightWheel = carNode.childNode(withName: "frontRightParent", recursively: false)!
-        let rearLeftWheel = carNode.childNode(withName: "rearLeftParent", recursively: false)!
-        let rearRightWheel = carNode.childNode(withName: "rearRightParent", recursively: false)!
-        
-        let v_frontLeftWheel = SCNPhysicsVehicleWheel(node: frontLeftWheel)
-        let v_frontRightWheel = SCNPhysicsVehicleWheel(node: frontRightWheel)
-        let v_rearRightWheel = SCNPhysicsVehicleWheel(node: rearLeftWheel)
-        let v_rearLeftWheel = SCNPhysicsVehicleWheel(node: rearRightWheel)
-
-        let body = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(node: carNode, options: [SCNPhysicsShape.Option.keepAsCompound: true]))
-        body.mass = 5
-        carNode.physicsBody = body
-        self.vehicle = SCNPhysicsVehicle(chassisBody: carNode.physicsBody!, wheels: [v_rearLeftWheel, v_rearRightWheel, v_frontLeftWheel, v_frontRightWheel])
-        self.sceneView.scene.physicsWorld.addBehavior(self.vehicle)
-        
-        self.sceneView.scene.rootNode.addChildNode(carNode)
-    }
-    
-    func setupAccelerometer() {
-        if motionManager.isAccelerometerAvailable {
-            motionManager.accelerometerUpdateInterval = 1/60
-            motionManager.startAccelerometerUpdates(to: .main, withHandler: {(accelerometerData, error) in
-                if let error = error {
-                    print(error)
-                    return
-                }
-                self.accelerometerDidChange(acceleration: accelerometerData!.acceleration)
-             })
-        } else {
-            
-        }
-    }
-    
-    func accelerometerDidChange(acceleration: CMAcceleration) {
-        
-        if acceleration.x > 0 {
-            self.orientation = CGFloat(-acceleration.y)
-        } else if acceleration.x < 0 {
-            self.orientation = CGFloat(acceleration.y)
-        }
-    }
-    
+    /*
+     Description:
+        This function is an interface from ARSCNViewDelegate, which is to tell the delegate to perform any upates that need to occur after physics simulations are performed
+     Input:
+     @ SCNSceneRenderer _ renderer: The ARSCNView object rendering the scene
+     @ TimeInterval didSimulatePhysicsAtTime time: the current system time
+     Output:
+     @ nil returnValue: nil
+     */
     func renderer(_ renderer: SCNSceneRenderer, didSimulatePhysicsAtTime time: TimeInterval) {
         var engineForce: CGFloat = 0
         var brakingForce: CGFloat = 0
@@ -180,11 +170,69 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         self.vehicle.applyBrakingForce(brakingForce, forWheelAt: 1)
     }
     
+    /*
+     Description:
+        This function is used to setup the accelerometer
+     Input:
+        @ nil parameter: nil
+     Output:
+        @ nil reutrnValue: nil
+    */
+    func setupAccelerometer() {
+        if motionManager.isAccelerometerAvailable {
+            motionManager.accelerometerUpdateInterval = 1/60
+            motionManager.startAccelerometerUpdates(to: .main, withHandler: {(accelerometerData, error) in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                self.accelerometerDidChange(acceleration: accelerometerData!.acceleration)
+             })
+        } else {
+            
+        }
+    }
+    
+    /*
+     Description:
+        This function is used to detect any change of accelerometer
+     Input:
+        @ CMAcceleration acceleration: an acceleration
+     Output:
+        @ nil returnValue: nil
+    */
+    func accelerometerDidChange(acceleration: CMAcceleration) {
+        
+        if acceleration.x > 0 {
+            self.orientation = CGFloat(-acceleration.y)
+        } else if acceleration.x < 0 {
+            self.orientation = CGFloat(acceleration.y)
+        }
+    }
+    
+    /*
+     Description:
+        This function is used to deal with touches began
+     Input:
+        @ Set<UITouch> _ touches: touches on the screen
+        @ UIEvent? with event: UIEvent
+     Output:
+        @ nil returnValue: nil
+    */
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let _ = touches.first else {return}
         self.touched += touches.count
     }
     
+    /*
+     Description:
+        This function is used to deal with touches ended
+     Input:
+        @ Set<UITouch> _ touches: touches on the screen
+        @ UIEvent? with event: UIEvent
+     Output:
+        @ nil returnValue: nil
+    */
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.touched = 0
     }
