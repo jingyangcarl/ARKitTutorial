@@ -73,7 +73,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     /*
      Description:
-        This function is an object-c function used as an action to pinch an object
+        This function is an object-c function used as an action to detect pinch event, which is used to scale the object
      Input:
         @ UIPinchGestureRecognizer sender: a pinch gesture recognizer
      Output:
@@ -95,7 +95,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     /*
      Description:
-        This function is an object-c function used as an action to rotate an object
+        This function is an object-c function used as an action to detect a long press event, which is used to rotate the object
      Input:
         @ UILongPressGestureRecognizer sender: a long press gesture recognizer
      Output:
@@ -107,7 +107,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let holdLocation = sender.location(in: sceneView)
         let hitTest = sceneView.hitTest(holdLocation)
         if !hitTest.isEmpty {
-            
             let result = hitTest.first!
             if sender.state == .began {
                 let rotation = SCNAction.rotateBy(x: 0, y: CGFloat(360.degreesToRadians), z: 0, duration: 1)
@@ -121,7 +120,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     /*
      Description:
-        This function is used to center the pivot
+        This function is used to center the pivot, which is the center of rotation
      Input:
         @ SCNNode for node: a SCNNode need to be centralized
      Output:
@@ -158,9 +157,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     /*
      Description:
+        This function is used to ask your data source ojbect for the number of items in the specified section, which indicates the number of cells
      Input:
+     @ UICollectionView _ collectionView: the collection view
+     @ Int numberOfItemsInSection section: the number of itmes in section
      Output:
-     @ Int returnValue: the number of cells CollectionView will display
+        @ Int returnValue: the number of cells CollectionView will display
      */
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return itemsArray.count
