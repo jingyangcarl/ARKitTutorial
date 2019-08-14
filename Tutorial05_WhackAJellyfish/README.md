@@ -38,5 +38,33 @@ This tutorial solution introduces tap-on detection using gesture recognizer, and
 ## Solution Hierarchy:
 ```
 ./Tutorial05_WhackAJellyfish
-
+├───Pods
+│   ├───Each
+│   │   └───Sources
+│   ├───Pods.xcodeproj
+│   │   └───xcuserdata
+│   │       └───qingguoxu.xcuserdatad
+│   │           └───xcschemes
+│   └───Target Support Files
+│       ├───Each
+│       └───Pods-Tutorial05_WhackAJellyfish
+├───Tutorial05_WhackAJellyfish
+│   ├───art.scnassets
+│   ├───Assets.xcassets
+│   │   ├───AppIcon.appiconset
+│   │   ├───Play.imageset
+│   │   └───Reset.imageset
+│   └───Base.lproj
+├───Tutorial05_WhackAJellyfish.xcodeproj
+│   ├───project.xcworkspace
+│   │   ├───xcshareddata
+│   │   └───xcuserdata
+│   │       └───qingguoxu.xcuserdatad
+│   └───xcuserdata
+│       └───qingguoxu.xcuserdatad
+│           └───xcschemes
+└───Tutorial05_WhackAJellyfish.xcworkspace
+    ├───xcshareddata
+    └───xcuserdata
+        └───qingguoxu.xcuserdatad
 ```
